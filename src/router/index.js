@@ -75,7 +75,7 @@ function generateRoutes(menus = []) {
         const route = {
           name: m.path,
           path: m.path,
-          // 如果IIS导入组件修改_import_production还是有问题，可以尝试直接使用 require('@/views' + m.viewPath + '.vue').default 导入
+          // 如果IIS导入组件还是有问题，可以尝试直接使用 require('@/views' + m.viewPath + '.vue').default 导入
           component: _import(m.viewPath),
           meta: {
             title: m.label,
@@ -99,7 +99,7 @@ function generateRoutes(menus = []) {
 
   routes.children.push({
     path: '*',
-    component: _import('/admin/404'),
+    component: _import('/error/404'),
     hidden: true
   })
 
